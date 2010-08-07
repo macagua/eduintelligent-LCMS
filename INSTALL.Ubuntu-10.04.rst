@@ -158,7 +158,7 @@ This command will create some directories, namely: ``bin/``, ``parts/``, ``eggs/
 
 Run the ``bin/buildout`` script.
     
-    $ bin/buildout
+    $ ./bin/buildout -v
     
 Sit back, relax, go for a cofee. It dependes on your bandwidth and your CPU power,
 but this process takes some time.
@@ -226,7 +226,7 @@ Create the database ``eduintelligent_logs``. This database will be used by
     $ #Login as postgresql user if needed
     $ sudo su postgresql
     
-    $ createdb --encoding=UTF-8 --owner=eduintelligent -U eduintelligent - W eduintelligent_logs
+    $ createdb --encoding=UTF-8 --owner=eduintelligent -U eduintelligent -W eduintelligent_logs
 
 Go back to the eduintelligent-LCMS directory. Before you run the ``create_schemas.sh``
 script, edit the following files and configure the user and password for the
@@ -237,7 +237,7 @@ eduintelligent role (Yes, the password you supplied in the section above.):
     
 Finally run the script:
 
-    $ ./create_schemas.sh
+    $ ./create_schema.sh
     
 
 Install eduintelligent.policy
@@ -245,7 +245,7 @@ Install eduintelligent.policy
 
 Run Plone in foreground mode:
 
-    $ bin/instance fg
+    $ ./bin/instance fg
     
 Open a web browser and point it to ``http://localhost:8080/`` . Login as admin (The
 password is in the ``buildout.cfg`` file).
